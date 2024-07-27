@@ -23,25 +23,24 @@ const timer = setInterval(() =>{
 },1500)
 // loader animation ends 
 
-
 // image animation starts
-const video1 = document.getElementById('video1');
-const video2 = document.getElementById('video2');
+// const video1 = document.getElementById('video1');
+// const video2 = document.getElementById('video2');
 
-let videosReady = 0;
+// let videosReady = 0;
 
-function checkAndPlayVideos() {
-    videosReady++;
-    if (videosReady === 2) {
-        video1.currentTime = 0;
-        video2.currentTime = 0;
-        video1.play();
-        video2.play();
-    }
-}
+// function checkAndPlayVideos() {
+//     videosReady++;
+//     if (videosReady === 2) {
+//         video1.currentTime = 0;
+//         video2.currentTime = 0;
+//         video1.play();
+//         video2.play();
+//     }
+// }
 
-video1.addEventListener('loadeddata', checkAndPlayVideos, { once: true });
-video2.addEventListener('loadeddata', checkAndPlayVideos, { once: true });
+// video1.addEventListener('loadeddata', checkAndPlayVideos, { once: true });
+// video2.addEventListener('loadeddata', checkAndPlayVideos, { once: true });
 // image animation ends
 
 // page1 animation starts
@@ -80,27 +79,27 @@ gsap.to('.page1',{
 
 const tl2 = gsap.timeline();
 
-tl2.to('#om', {
+tl2.to(['#D','#A2'], {
     y: '100%',
     scrollTrigger: {
         trigger: '.page1-part2',
         scroller: 'body',
-        start: 'bottom bottom',
+        start: 'bottom 92%',
         end: 'bottom 40%',
         scrub: 1,
     }
 })
-.to(['#c', '#m'], {
+.to(['#H1', '#L'], {
     y: '100%',
     scrollTrigger: {
         trigger: '.page1-part2',
         scroller: 'body',
-        start: 'bottom 98%',
+        start: 'bottom 94%',
         end: 'bottom 40%',
         scrub: 1,
     }
 })
-.to(['#o', '#n1'], {
+.to(['#A1', '#U'], {
     y: '100%',
     scrollTrigger: {
         trigger: '.page1-part2',
@@ -110,12 +109,22 @@ tl2.to('#om', {
         scrub: 1,
     }
 })
-.to(['#u', '#n2'], {
+.to(['#R', '#H2'], {
     y: '100%',
     scrollTrigger: {
         trigger: '.page1-part2',
         scroller: 'body',
-        start: 'bottom 94%',
+        start: 'bottom 98%',
+        end: 'bottom 40%',
+        scrub: 1,
+    }
+})
+.to('#C', {
+    y: '100%',
+    scrollTrigger: {
+        trigger: '.page1-part2',
+        scroller: 'body',
+        start: 'bottom bottom',
         end: 'bottom 40%',
         scrub: 1,
     }
