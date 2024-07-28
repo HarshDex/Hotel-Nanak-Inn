@@ -14,34 +14,34 @@ gsap.from('.menu',{
 })
 
 // loader animation starts
-const timer = setInterval(() =>{
-    gsap.to('.loader',{
-        opacity : 0,
-        duration :1,
-    })
-    
-},1500)
+const loader = document.querySelector('.loader h1');
+let count = 0;
+
+// Set the interval to update the countdown
+const timer = setInterval(() => {
+    if (count <= 100) {
+        loader.textContent = count;
+        count+=5;
+    } else {
+        clearInterval(timer);
+
+        // Start the existing GSAP animation once the countdown reaches 100
+        const loadingTime = gsap.timeline();
+        loadingTime.to('.loader h1', {
+            opacity: 0,
+            duration: 1,
+        }).to('.loader', {
+            opacity: 0,
+            duration: 2,
+            onComplete: () => {
+                document.querySelector('.loader').style.display = 'none'; // Hide loader after animation
+            }
+        });
+    }
+}, 30);
 // loader animation ends 
 
-// image animation starts
-// const video1 = document.getElementById('video1');
-// const video2 = document.getElementById('video2');
 
-// let videosReady = 0;
-
-// function checkAndPlayVideos() {
-//     videosReady++;
-//     if (videosReady === 2) {
-//         video1.currentTime = 0;
-//         video2.currentTime = 0;
-//         video1.play();
-//         video2.play();
-//     }
-// }
-
-// video1.addEventListener('loadeddata', checkAndPlayVideos, { once: true });
-// video2.addEventListener('loadeddata', checkAndPlayVideos, { once: true });
-// image animation ends
 
 // page1 animation starts
 const tl = gsap.timeline();
