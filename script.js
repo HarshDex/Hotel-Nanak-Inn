@@ -1,10 +1,10 @@
 gsap.registerPlugin(ScrollTrigger);
 
 document.body.addEventListener("mousemove",(dets)=>{
-    console.log(dets.x,dets.y);
+    // console.log(dets.clientX,dets.clientY)
     gsap.to('.cursor',{
         x : dets.clientX,
-        y : dets.clientY
+        y : dets.clientY,
     })
 })
 
