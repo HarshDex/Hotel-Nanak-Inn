@@ -1,5 +1,39 @@
 gsap.registerPlugin(ScrollTrigger);
 
+document.addEventListener("DOMContentLoaded", function() {
+    const audio = document.getElementById("background-audio");
+    const toggleButton = document.getElementById("toggle-sound");
+
+    // Function to update button icon based on audio state
+    function updateButtonIcon() {
+        if (audio.paused) {
+            toggleButton.innerHTML = `<i class="ri-volume-mute-fill"></i>`;
+        } else {
+            toggleButton.innerHTML = `<i class="ri-volume-up-line"></i>`;
+        }
+    }
+
+    // Toggle play/pause on button click
+    toggleButton.addEventListener("click", function() {
+        if (audio.paused) {
+            audio.play().catch(error => {
+                console.error('Error playing audio:', error);
+            });
+        } else {
+            audio.pause();
+        }
+        updateButtonIcon();
+    });
+
+    // Attempt to play the audio when the page loads
+    audio.play().then(() => {
+        updateButtonIcon();
+    }).catch(error => {
+        console.error('Error playing audio:', error);
+    });
+});
+
+
 document.body.addEventListener("mousemove",(dets)=>{
     // console.log(dets.clientX,dets.clientY)
     gsap.to('.cursor',{
@@ -20,7 +54,7 @@ let count = 0;
 // Set the interval to update the countdown
 const timer = setInterval(() => {
     if (count <= 100) {
-        loader.textContent = count;
+        loader.textContent = count+'%';
         count+=5;
     } else {
         clearInterval(timer);
@@ -72,7 +106,7 @@ gsap.to('.page1',{
         trigger : '.page1',
         scroller : 'body',
         start: "bottom bottom",
-        end : "bottom -200%",
+        end : "bottom 0%",
         pin : true,
     }
 })
@@ -141,49 +175,7 @@ const tl4 = gsap.timeline({
     }
 });
 
-tl4.from('.page1-inside-container2-image1', {
-    width: "20vw",
-    height: "40vh",
-    y: "200%",
-    duration: 1,
-})
-.to('.page1-inside-container2-image1', {
-    y: 0,
-    duration: 1,
-    delay: 1
-})
-.to('.page1-inside-container2-image1', {
-    y: "-200%",
-    duration: 1,
-    width: "20vw",
-    height: "40vh",
-});
 
-
-const page1Inside = document.querySelector('.page1-inside-container2-image1');
-page1Inside.addEventListener('mousemove',(dets)=>{
-    gsap.to('.page1-inside-container2-image1-text',{
-        opacity : 1,
-        y : dets.clientY-70,
-    })
-})
-page1Inside.addEventListener('mouseleave',()=>{
-    gsap.to('.page1-inside-container2-image1-text',{
-        opacity : 0,
-    })
-})
-page1Inside.addEventListener('mousemove',()=>{
-    console.log("cursor visible")
-    gsap.to('.cursor',{
-        scale : 1,
-    })
-})
-page1Inside.addEventListener('mouseleave',()=>{
-    console.log("cursor hidden")
-    gsap.to('.cursor',{
-        scale : 0,
-    })
-})
 
 // page1 inside animations ends here
 
@@ -221,4 +213,19 @@ document.querySelector('.menu').addEventListener('click', () => {
     }
     flag = !flag;
 });
+
 // menu animation ends here 
+
+
+// page2 aniation
+
+gsap.to('.page2', {
+    backgroundColor:'#F8F2EB',
+    delay : 0.3,
+    scrollTrigger : {
+        trigger : ".page2",
+        start : 'top 80%',
+        end : 'top 40%',
+        scrub : true,
+    }
+})

@@ -5,13 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Nanak|Luxury and Affordability in one place</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="./css/mediaQuerry.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon-ligatures@2.5.0/fonts/remixicon.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
 </head>
 <body>
+    
+    <!-- code for audio starts-->
+    <div class="audio-control">
+        <button id="toggle-sound"><i class="ri-volume-mute-fill"></i></button>
+        <audio id="background-audio" loop autoplay>
+            <source src="./assets/backround-audio.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+     <!-- code for audio ends -->
     
     <!--loader starts here  -->
     <div class="loader">
@@ -53,7 +64,7 @@
         <!-- page1 starts here -->
         <div class="page1">
             <div class="page1-part1">
-                <h2>Embrace the serenity of Dharchula, where every sunrise over Adi Kailash and Panchauli whispers the promise of a new adventure.</h2>
+                <h2>Embrace the serenity of Dharchula, where every sunrise over the mountains and valleys promises a new adventure.</h2>
                 <div class="page1-part1-image">
                     <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/d7/15/89/om-parvat.jpg?w=1400&h=-1&s=1" alt="">
                 </div>
@@ -71,23 +82,28 @@
                     <span id="A2">A</span>
                 </h1>
                 <div class="page1-part2-image">
-                    <!-- <video id="video2" src="https://player.vimeo.com/progressive_redirect/playback/929422200/rendition/1080p/file.mp4?loc=external&signature=7a04f832341542e3faa722a90176b71b576f8f3f1782c8bfc73bf92376b7ce13" autoplay loop muted></video> -->
                     <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/d7/15/89/om-parvat.jpg?w=1400&h=-1&s=1" alt="">
+                </div>
+                <div class="bottom-arrow">
+                    <img src="https://png.pngtree.com/png-vector/20230918/ourmid/pngtree-white-arrow-pointer-3d-symbol-png-image_10091233.png" alt="">
                 </div>
             </div>
             <div class="page1-inside">
                 <div class="page1-inside-container1">
-                    <h1>WELCOME TO HOTEL NANAK</h1>
-                    <h1>LUXURY AND ELEGANCE IN THE HILLS</h1>
-                </div>
-                <div class="page1-inside-container2">
-                    <div class="page1-inside-container2-image1">
-                        <div class="page1-inside-container2-image1-text">
-                            <h1>Sustainable Saloons</h1>
-                            <h2>UI / UX / Design Direction / Components / Library</h2>
+                    <!-- <h3>Nanak Hotel</h3> -->
+                     <div class="page1-inside-background-image">
+                        <img src="https://mediaim.expedia.com/destination/2/ac300501822d11882400cda34f3e5f39.jpg" alt="">
+                     </div>
+                    <div class="page1-inside-top-sec">
+                        <div class="hotel-name">
+                            <img src="./assets/name.png" alt="">
                         </div>
-                        <img src="https://uncommonstudio.com.au/_next/image?url=https%3A%2F%2Fadmin.uncommonstudio.com.au%2Fuploads%2Fhome_work_1_bfc7d4ae64.jpg&w=1920&q=100" alt="">
-                        <!-- <img src="./assets/krishna.jpg" alt=""> -->
+                    </div>
+                    <div class="page1-inside-bottom-sec">
+                        <div class="book-now">
+                            <p>BOOK NOW</p>
+                        </div>
+                        <h1>FEEL THE BEAUTY AND ELEGANCE OF THE HILLS</h1>
                     </div>
                 </div>
             </div>
