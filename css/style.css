@@ -61,7 +61,8 @@ html,body{
     width: 40px;
     position: fixed;
     z-index: 25;
-    color : rgb(0, 0, 0);
+    color : rgb(184, 184, 184);
+    mix-blend-mode: difference;
 }
 
 /* .cursor code */
@@ -69,35 +70,41 @@ html,body{
 
 /* menu starts here */
 .menu{
-    z-index: 17;
-    position : fixed;
-    top: 50%;
-    right: 8%;
+    height : 50vh;
+    width: 100%;
+    background-color: #F8F2EB;
+    position: fixed;
+    top: -50%;
+    z-index: 20;
 }
 
-.menu-items{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
+.close-button{
+    height: 40px;
+    width: 40px;
     text-align: center;
-    width: 54px;
-    height: 20px;
-    background-color: white;
     position: absolute;
-    font-size: .5em;
-    font-weight: 600;
-    padding: .6em;
+    right : 2em;
+    top : 4vh;
     cursor: pointer;
-    transition: all ease .4s;
-}
-.menu-items span{
     font-size: 2em;
-    font-weight: 900;
-    margin-left: 5px;
+    z-index: 20;
 }
-.menu-items:hover{
-    scale: 1.1;
+.items{
+    cursor: pointer;
+}
+
+/* menu ends here */
+
+/* .cursor code */
+.cursor{
+    height: 10px;
+    width: 10px;
+    border-radius: 100%;
+    position: fixed;
+    z-index: 25;
+    color : rgb(0, 0, 0);
+    background-color : yellow;
+    /* border: 2px solid blue;  */
 }
 
 /* menu ends here */
@@ -110,7 +117,7 @@ html,body{
     width: 100%;
     background-color :#121212;
     display : flex;
-    color: white;
+    color: #F8F2EB;
     justify-content: flex-end;
     align-items: flex-end;
     padding: 1em;
@@ -128,7 +135,7 @@ html,body{
     height: 100vh;
     width: 100%;
     overflow : hidden;
-    background-color :#121212;    
+    background-color :#121212;
 }
 .page1-images{
     position: absolute;
@@ -143,7 +150,7 @@ html,body{
     width: 100%;
     background-color: transparent;
     top: 0;
-    z-index: 7; 
+    z-index: 7;
     overflow: hidden;
 }
 
@@ -160,8 +167,9 @@ html,body{
     color: rgba(0, 0, 0, 0.511);
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.323);
     font-style: italic;
-
 }
+
+
 .bottom-arrow {
     z-index: 8;
     position: absolute;
@@ -262,10 +270,11 @@ html,body{
     position: relative;
     min-height: 100vh;
     width : 100%;
-    color : white;
+    color : #F8F2EB;
     z-index : 2;
 }
 .page1-inside-top-sec{
+    z-index: 5;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -292,6 +301,20 @@ html,body{
     letter-spacing: -4px;
 }
 
+.menu-button{
+    position: fixed;
+    top: 5px;
+    right: 3%;
+    font-size: 2em;
+    cursor : pointer;
+    z-index: 5;
+}
+
+.menu-button i{
+    cursor : pointer;
+}
+
+
 .page1-inside-background-image{
     position: absolute;
     top: 5.8em;
@@ -310,7 +333,7 @@ html,body{
     position: absolute;
     height: 2.4em;
     width: 8em;
-    border: 1px solid white;
+    border: 1px solid #F8F2EB;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -327,7 +350,7 @@ html,body{
 }
 
 .book-now:hover{
-    background-color:white;
+    background-color:#F8F2EB;
 }
 .book-now:hover p{
     color: black;
@@ -341,7 +364,7 @@ html,body{
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    color : rgb(255, 255, 255);
+    color : #F8F2EB;
     padding : 0 1em;
 }
 
@@ -366,6 +389,6 @@ html,body{
 /* page3 starts here */
 .page3{
     height: 100vh;
-    width: 100%;background-color: white;
+    width: 100%;background-color: #F8F2EB;
 }
 /* page3 ends here */

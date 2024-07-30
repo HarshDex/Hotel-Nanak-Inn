@@ -1,44 +1,43 @@
 gsap.registerPlugin(ScrollTrigger);
 
-document.addEventListener("DOMContentLoaded", function() {
-    const audio = document.getElementById("background-audio");
-    const toggleButton = document.getElementById("toggle-sound");
+// document.addEventListener("DOMContentLoaded", function() {
+//     const audio = document.getElementById("background-audio");
+//     const toggleButton = document.getElementById("toggle-sound");
 
-    // Function to update button icon based on audio state
-    function updateButtonIcon() {
-        if (audio.paused) {
-            toggleButton.innerHTML = `<i class="ri-volume-mute-fill"></i>`;
-        } else {
-            toggleButton.innerHTML = `<i class="ri-volume-up-line"></i>`;
-        }
-    }
+//     // Function to update button icon based on audio state
+//     function updateButtonIcon() {
+//         if (audio.paused) {
+//             toggleButton.innerHTML = `<i class="ri-volume-mute-fill"></i>`;
+//         } else {
+//             toggleButton.innerHTML = `<i class="ri-volume-up-line"></i>`;
+//         }
+//     }
 
-    // Toggle play/pause on button click
-    toggleButton.addEventListener("click", function() {
-        if (audio.paused) {
-            audio.play().catch(error => {
-                console.error('Error playing audio:', error);
-            });
-        } else {
-            audio.pause();
-        }
-        updateButtonIcon();
-    });
+//     // Toggle play/pause on button click
+//     toggleButton.addEventListener("click", function() {
+//         if (audio.paused) {
+//             audio.play().catch(error => {
+//                 console.error('Error playing audio:', error);
+//             });
+//         } else {
+//             audio.pause();
+//         }
+//         updateButtonIcon();
+//     });
 
-    // Attempt to play the audio when the page loads
-    audio.play().then(() => {
-        updateButtonIcon();
-    }).catch(error => {
-        console.error('Error playing audio:', error);
-    });
-});
+//     // Attempt to play the audio when the page loads
+//     audio.play().then(() => {
+//         updateButtonIcon();
+//     }).catch(error => {
+//         console.error('Error playing audio:', error);
+//     });
+// });
 
 
 document.body.addEventListener("mousemove",(dets)=>{
-    // console.log(dets.clientX,dets.clientY)
     gsap.to('.cursor',{
-        x : dets.clientX,
-        y : dets.clientY,
+        x : dets.clientX -5,
+        y : dets.clientY -10,
     })
 })
 
@@ -164,56 +163,31 @@ tl2.to(['#D','#A2'], {
     }
 });
 
-// page1 inside animations starts here
-const tl4 = gsap.timeline({
-    scrollTrigger: {
-        trigger: ".page1-inside-container2-image1",
-        scroller: 'body',
-        start: "top 45%",
-        end: "top -50%",
-        scrub: 3,
-    }
-});
-
-
 
 // page1 inside animations ends here
 
 // page 1 ends here
 
 // menu animations starts here
+const menuTl = gsap.timeline({paused: true});
 
-const tl3 = gsap.timeline();
-
-tl3.to('#contact', {
-    x: "-7em",
-    duration: 0.15,
+menuTl
+.to('.menu',{
+    y : '100%',
+    duration : 0.5,
 })
-.to('#service', {
-    x: "-14em",
-    duration: 0.15,
+.from('.item',{
+    y : "-100%",
+    stagger : 0.2,
 })
-.to('#studio', {
-    x: "-21em",
-    duration: 0.15,
+
+document.querySelector('.menu-button').
+addEventListener("click",()=>{
+    menuTl.play();
 })
-.to('#work', {
-    x: "-28em",
-    duration: 0.15,
-});
-
-tl3.pause();
-
-let flag = false;
-document.querySelector('.menu').addEventListener('click', () => {
-    if (!flag) {
-        tl3.play();
-    } else {
-        tl3.reverse();
-    }
-    flag = !flag;
-});
-
+document.querySelector('.close-button').addEventListener('click',()=>{
+    menuTl.reverse();
+})
 // menu animation ends here 
 
 
