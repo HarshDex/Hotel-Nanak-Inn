@@ -1,37 +1,6 @@
 gsap.registerPlugin(ScrollTrigger);
 
-// document.addEventListener("DOMContentLoaded", function() {
-//     const audio = document.getElementById("background-audio");
-//     const toggleButton = document.getElementById("toggle-sound");
-
-//     // Function to update button icon based on audio state
-//     function updateButtonIcon() {
-//         if (audio.paused) {
-//             toggleButton.innerHTML = `<i class="ri-volume-mute-fill"></i>`;
-//         } else {
-//             toggleButton.innerHTML = `<i class="ri-volume-up-line"></i>`;
-//         }
-//     }
-
-//     // Toggle play/pause on button click
-//     toggleButton.addEventListener("click", function() {
-//         if (audio.paused) {
-//             audio.play().catch(error => {
-//                 console.error('Error playing audio:', error);
-//             });
-//         } else {
-//             audio.pause();
-//         }
-//         updateButtonIcon();
-//     });
-
-//     // Attempt to play the audio when the page loads
-//     audio.play().then(() => {
-//         updateButtonIcon();
-//     }).catch(error => {
-//         console.error('Error playing audio:', error);
-//     });
-// });
+var rellax = new Rellax('.rellax');
 
 
 document.body.addEventListener("mousemove",(dets)=>{
@@ -41,16 +10,18 @@ document.body.addEventListener("mousemove",(dets)=>{
     })
 })
 
-gsap.from('.menu',{
-    opacity : 0,
-    delay : 2,
-})
-
 // loader animation starts
 const loader = document.querySelector('.loader h1');
 let count = 0;
 
 // Set the interval to update the countdown
+gsap.from('.loading-image',{
+    opacity : 0,
+    duration: 1.3,
+    onComplete: () => {
+        document.querySelector('.loading-image').style.display = 'none'; 
+    }
+})
 const timer = setInterval(() => {
     if (count <= 100) {
         loader.textContent = count+'%';
@@ -63,11 +34,12 @@ const timer = setInterval(() => {
         loadingTime.to('.loader h1', {
             opacity: 0,
             duration: 1,
-        }).to('.loader', {
+        })
+        .to('.loader', {
             opacity: 0,
             duration: 2,
             onComplete: () => {
-                document.querySelector('.loader').style.display = 'none'; // Hide loader after animation
+                document.querySelector('.loader').style.display = 'none'; 
             }
         });
     }
@@ -164,6 +136,8 @@ tl2.to(['#D','#A2'], {
 });
 
 
+
+
 // page1 inside animations ends here
 
 // page 1 ends here
@@ -177,7 +151,7 @@ menuTl
     duration : 0.5,
 })
 .from('.item',{
-    y : "-100%",
+    y : "-35vw",
     stagger : 0.2,
 })
 
