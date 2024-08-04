@@ -167,13 +167,3 @@ document.querySelector('.close-button').addEventListener('click',()=>{
 
 // page2 aniation
 
-gsap.to('.page2', {
-    backgroundColor:'#F8F2EB',
-    delay : 0.3,
-    scrollTrigger : {
-        trigger : ".page2",
-        start : 'top 80%',
-        end : 'top 40%',
-        scrub : true,
-    }
-})

@@ -10,10 +10,14 @@ html,body{
   height : 100%;
   width : 100%;
 }
+
 ::-webkit-scrollbar{
     display : none;
 }
 
+::selection{
+    background: rgba(82, 139, 151, 0.219);
+}
 
 
 /* audio code starts here */
@@ -59,6 +63,7 @@ html,body{
     z-index: 25;
     color : rgb(184, 184, 184);
     mix-blend-mode: difference;
+    background-color: grey;
 }
 /* .cursor code */
 
@@ -247,7 +252,6 @@ html,body{
 }
 
 
-
 .page1-part1-image {
     position: absolute;
     top: 0;
@@ -337,14 +341,14 @@ html,body{
     line-height: 12vh;
 }
 .page1-inside-bottom-sec h1{
-    font-size: 2.7em;
+    font-size: 2.4em;
     -webkit-text-stroke: 1px rgba(0, 0, 0, 0.501);
-    font-weight: 900;
+    font-weight: 400;
     z-index: 5;
     position: relative;
     top: 40%;
     color: rgb(226, 225, 225);
-    letter-spacing: -4px;
+    /* letter-spacing: -4px; */
 }
 
 .menu-button{
@@ -428,21 +432,92 @@ html,body{
     object-fit: contain;
 }
 
-
-
+.arrow-bottom{
+    top: 0;
+    z-index: 9;
+    font-size: 1.1em;
+}
 /* Page1 ends here */
+
 
 /* page2 starts here */
 .page2{
-    height: 100vh;
+    padding-top: 10vh;
+    display: flex;
+    height: 120vh;
     width: 100%;
     background-color: #F8F2EB;  
 }
+
+.page2-part1{
+    position: relative;
+    height: 100vh;
+    width: 50%;
+}
+.page2-part1-bigger{
+    position : relative;
+    left: 10vw;
+    height: 32em;
+    width: 45vw;
+}
+.page2-part1-bigger img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.145);
+}
+.page2-part1-smaller{
+    top: -10%;
+    position: relative;
+    height: 22em;
+    width: 30vw;
+    left: 10%;
+}
+.page2-part1-smaller img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.page2-part2{
+    padding : 0 10vw;
+    height: 100vh;
+    width: 50%;
+}
+
+.page2-part2 h1{
+    font-size: 2em;
+    font-weight: 500;
+    color : #896027;
+}
+.page2-part2 p{
+    font-size: 1em;
+    margin : 1em 0;
+}
+
+.book-directly{
+    border : none;
+    background-color: transparent;
+    color: #956158d9;
+    font-weight: 600;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    margin-top: 10%;
+    cursor: pointer;
+}
+.book-directly:hover{
+    color: #956158;
+}
+
 /* page2 ends here */
 
+
 /* page3 starts here */
+
 .page3{
     height: 100vh;
-    width: 100%;background-color: #F8F2EB;
+    width: 100%;
+    background: linear-gradient(to bottom,#F8F2EB, #E3E2DC, #D5D8D3);
 }
+
 /* page3 ends here */
