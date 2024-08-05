@@ -57,83 +57,83 @@ const page1ScrollTrigger = {
     end : 'bottom center',
     scrub : 2,
 }
-tl.to('.page1-part1',{
-    y : "-100%",
-    delay : 0.5,
-    scrollTrigger : page1ScrollTrigger,
-})
-tl.to('.page1-part2',{
-    delay : 0.5,
-    y : "100%",
-    scrollTrigger : page1ScrollTrigger,
-})
-tl.from('.page1-inside-container1 h1',{
-    opacity : 0,
-    scrollTrigger : page1ScrollTrigger
-})
+// tl.to('.page1-part1',{
+//     y : "-100%",
+//     delay : 0.5,
+//     scrollTrigger : page1ScrollTrigger,
+// })
+// tl.to('.page1-part2',{
+//     delay : 0.5,
+//     y : "100%",
+//     scrollTrigger : page1ScrollTrigger,
+// })
+// tl.from('.page1-inside-container1 h1',{
+//     opacity : 0,
+//     scrollTrigger : page1ScrollTrigger
+// })
 
-gsap.to('.page1',{
-    scrollTrigger : {
-        trigger : '.page1',
-        scroller : 'body',
-        start: "bottom bottom",
-        end : "bottom -50%",
-        pin : true,
-    }
-})
+// gsap.to('.page1',{
+//     scrollTrigger : {
+//         trigger : '.page1',
+//         scroller : 'body',
+//         start: "bottom bottom",
+//         end : "bottom -50%",
+//         pin : true,
+//     }
+// })
 
-const tl2 = gsap.timeline();
+// const tl2 = gsap.timeline();
 
-tl2.to(['#D','#A2'], {
-    y: '100%',
-    scrollTrigger: {
-        trigger: '.page1-part2',
-        scroller: 'body',
-        start: 'bottom 92%',
-        end: 'bottom 40%',
-        scrub: 1,
-    }
-})
-.to(['#H1', '#L'], {
-    y: '100%',
-    scrollTrigger: {
-        trigger: '.page1-part2',
-        scroller: 'body',
-        start: 'bottom 94%',
-        end: 'bottom 40%',
-        scrub: 1,
-    }
-})
-.to(['#A1', '#U'], {
-    y: '100%',
-    scrollTrigger: {
-        trigger: '.page1-part2',
-        scroller: 'body',
-        start: 'bottom 96%',
-        end: 'bottom 40%',
-        scrub: 1,
-    }
-})
-.to(['#R', '#H2'], {
-    y: '100%',
-    scrollTrigger: {
-        trigger: '.page1-part2',
-        scroller: 'body',
-        start: 'bottom 98%',
-        end: 'bottom 40%',
-        scrub: 1,
-    }
-})
-.to('#C', {
-    y: '100%',
-    scrollTrigger: {
-        trigger: '.page1-part2',
-        scroller: 'body',
-        start: 'bottom bottom',
-        end: 'bottom 40%',
-        scrub: 1,
-    }
-});
+// tl2.to(['#D','#A2'], {
+//     y: '100%',
+//     scrollTrigger: {
+//         trigger: '.page1-part2',
+//         scroller: 'body',
+//         start: 'bottom 92%',
+//         end: 'bottom 40%',
+//         scrub: 1,
+//     }
+// })
+// .to(['#H1', '#L'], {
+//     y: '100%',
+//     scrollTrigger: {
+//         trigger: '.page1-part2',
+//         scroller: 'body',
+//         start: 'bottom 94%',
+//         end: 'bottom 40%',
+//         scrub: 1,
+//     }
+// })
+// .to(['#A1', '#U'], {
+//     y: '100%',
+//     scrollTrigger: {
+//         trigger: '.page1-part2',
+//         scroller: 'body',
+//         start: 'bottom 96%',
+//         end: 'bottom 40%',
+//         scrub: 1,
+//     }
+// })
+// .to(['#R', '#H2'], {
+//     y: '100%',
+//     scrollTrigger: {
+//         trigger: '.page1-part2',
+//         scroller: 'body',
+//         start: 'bottom 98%',
+//         end: 'bottom 40%',
+//         scrub: 1,
+//     }
+// })
+// .to('#C', {
+//     y: '100%',
+//     scrollTrigger: {
+//         trigger: '.page1-part2',
+//         scroller: 'body',
+//         start: 'bottom bottom',
+//         end: 'bottom 40%',
+//         scrub: 1,
+//     }
+// });
 
 
 
@@ -165,5 +165,4 @@ document.querySelector('.close-button').addEventListener('click',()=>{
 // menu animation ends here 
 
 
-// page2 aniation
 

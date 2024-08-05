@@ -518,7 +518,7 @@ html,body{
 .page3{
     position: relative;
     display: flex;
-    height: 100vh;
+    height: 35em;
     width: 100%;
     background: linear-gradient(to bottom,#F8F2EB, #E3E2DC, #D5D8D3);
 }
@@ -536,6 +536,7 @@ html,body{
     height: 20em;
     width: 30vw;
 }
+
 .page3-part2-smaller img{
     height: 100%;
     width: 100%;
@@ -565,6 +566,7 @@ html,body{
     font-weight: 500;
     color : #896027;
 }
+
 .page3-part1 p{
     font-size: 1em;
 }
@@ -572,7 +574,6 @@ html,body{
 
 
 /* page 4 starts here */
-
 .page4{
     display: flex;
     justify-content:  center;
@@ -583,7 +584,7 @@ html,body{
 }
 
 .page4-image-content{
-    margin-top: -10%;
+    /* margin-top: -20%; */
     height: 100%;
     width: 90%;
     filter: brightness(50%);
@@ -609,3 +610,11 @@ html,body{
 }
 
 /* page 4 ends here */
+
+/* page 5 starts here */
+.page5{
+    height: 100vh;
+    width: 100%;
+    background-color : #C6CBC9;
+}
+/* page 5 ends here */
