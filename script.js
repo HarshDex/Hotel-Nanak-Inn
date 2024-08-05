@@ -59,11 +59,11 @@ const page1ScrollTrigger = {
 }
 tl.to('.page1-part1',{
     y : "-100%",
-    delay : 1,
+    delay : 0.5,
     scrollTrigger : page1ScrollTrigger,
 })
 tl.to('.page1-part2',{
-    delay : 1,
+    delay : 0.5,
     y : "100%",
     scrollTrigger : page1ScrollTrigger,
 })
@@ -77,7 +77,7 @@ gsap.to('.page1',{
         trigger : '.page1',
         scroller : 'body',
         start: "bottom bottom",
-        end : "bottom 0%",
+        end : "bottom -50%",
         pin : true,
     }
 })
