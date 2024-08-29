@@ -73,7 +73,7 @@ html,body{
     background-color: #F8F2EB;
     position: fixed;
     top: -50%;
-    z-index: 20;
+    z-index: 50;
     gap: 10vw;
 }
 
@@ -433,11 +433,40 @@ html,body{
     object-fit: contain;
 }
 
-.arrow-bottom{
-    top: 0;
-    z-index: 9;
-    font-size: 1.1em;
+.arrow-bottom {
+    position: absolute;
+    bottom: 14vh; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    display: block;
 }
+
+.arrow-bottom img {
+    width: 15px; /* Adjust the size based on your needs */
+    height: auto;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    animation: bounce 2s infinite; /* Add animation here */
+}
+
+.arrow-bottom img:hover {
+    opacity: 0.8; /* Add some interaction effect if needed */
+}
+
+/* Keyframes for bounce animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-20px); 
+    }
+    60% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
 /* Page1 ends here */
 
 
@@ -468,7 +497,7 @@ html,body{
     box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.145);
 }
 .page2-part1-smaller{
-    top: -10%;
+    top: -10em;
     position: relative;
     height: 22em;
     width: 30vw;
@@ -575,15 +604,20 @@ html,body{
 
 /* page 4 starts here */
 .page4{
+    position: relative;
     display: flex;
     justify-content:  center;
     align-items: center;
+    flex-direction: column;
     height: 100vh;
+    gap: 1em;
     width: 100%;
     background: linear-gradient(to bottom, #D5D8D3,#C8CDCB,#C6CBC9);
 }
 
 .page4-image-content{
+    position: absolute;
+    z-index: 2;
     /* margin-top: -20%; */
     height: 100%;
     width: 90%;
@@ -597,24 +631,362 @@ html,body{
 }
 
 .page4-text{
-    margin-top: 0%;
-    height: 40%;
+    z-index: 10;
     width: 100%;
     text-align: center;
     padding: 0 5em;
     font-size : 1.3em;
-    position: absolute;
-    color: #F8F2EB;;
+    color: #F8F2EB;
     font-weight: 500;
     text-transform: uppercase;
 }
 
+a{
+    z-index: 10;
+}
+
+.page4-button{
+    z-index: 10;
+    border : none;
+    font-size: 1em;
+    background-color: transparent;
+    color: #F8F2EB;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all ease 0.3s;
+}
+
+.page4-button:hover{
+    color: #f6d8b5;
+}
+
 /* page 4 ends here */
 
-/* page 5 starts here */
+/* page5 starts here */
 .page5{
+    padding-top: 5%;
+    overflow: hidden;
+    display: flex;
     height: 100vh;
+    justify-content: space-between;
     width: 100%;
     background-color : #C6CBC9;
 }
+.page5-part1{
+    padding-left: 5%;
+    padding-top: 5%;
+    height: 100%;
+    width: 40%;
+}
+.page5 h1{
+    font-size: 2em;
+    font-weight: 500;
+    color : #583d19;
+    margin-bottom: 1em;
+}
+.page5-part1 p{
+    padding-right: 1em;
+}
+
+.page5-images{
+    padding-top: 10%;
+    padding-left: 5%;
+    position: relative;
+    height : 100%;
+    width: 50%;
+}
+.page5-large-image{
+    position: absolute;
+    height: 30em;
+    filter: brightness(70%);
+    width: 35em;
+}
+.page5-large-image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.page5-smaller-image{
+    position: absolute;
+    height: 25em;
+    width: 30vw;
+    left: -10%;
+    z-index: 8;
+    bottom: -3em;
+}  
+.page5-smaller-image img{
+    height: 100%; 
+    width: 100%;
+    object-fit: cover;
+}
+.page5-button{
+    border : none;
+    background-color: transparent;
+    color : #583d19;
+    font-weight: 600;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    margin-top: 5%;
+    cursor: pointer;
+}
+
+.page5-button:hover{
+    color: #2d2c2a;
+}
 /* page 5 ends here */
+
+/* page 6 starts here */
+.page6{
+    display: flex;
+    height: 100vh;
+    gap: 20px;
+    width: 100%;
+    background: linear-gradient(to top, #D5D8D3,#C8CDCB,#C6CBC9);
+    overflow: hidden;
+    padding: 0 3em;
+}
+.page6-images{
+    height : 100vh;
+    width: 50%;
+}
+
+.page6-large-image{
+    position: relative;
+    top: 10em;
+    height: 30em;
+    width: 35em;
+}
+
+.page6-large-image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.page6-smaller-image{
+    height: 20em;
+    width: 25em;
+    position: relative;
+    left: 15em;
+}
+.page6-smaller-image img{
+    height: 100%;
+    width : 100%;
+    object-fit: cover;
+}
+
+.page6-part1{
+    padding-left: 10%;
+    padding-top:2em;
+    height: 100%;
+    width: 50%;
+}
+
+.page6-part1 h1{
+    font-size: 2em;
+    font-weight: 500;
+    color : #583d19;
+    margin-bottom: 1em;
+}
+/* page 6 ends here */
+
+/* page7 starts here */
+.page7 {
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(to top,#F8F2EB, #E3E2DC, #D5D8D3);
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.page7 h1 {
+    font-size: 2em;
+    font-weight: 500;
+    color: #583d19;
+    margin-bottom: 1em;
+}
+
+.page7-inside {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Max width for the content */
+}
+
+#map {
+    height: 70vh;
+    width: 55%;
+    border: 0;
+    z-index: 5;
+}
+
+.page7-about {
+    width: 40%;   /* About text width */
+    padding-left: 2em;
+    color: black;
+    font-size: 1em;
+}
+
+/* page7 ends here */
+
+/* page 8 starts here */
+.page8 {
+    padding: 1em;
+    height: 110vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #F8F2EB;
+}
+
+.page8-inner{
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+.form-image{
+    border-top: 1px solid black;
+    height: 40vh;
+    width: 50%;
+}
+.form-image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.page8 h1{
+    color: #583d19;
+}
+
+.submit-form {
+    height: 90vh;
+    width: 98%;
+    max-width: 600px;
+    border-radius: 8px;
+    padding: 20px;
+    backdrop-filter: blur(30px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.submit-form div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.submit-form label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color : #896027;
+}
+
+.submit-form input,
+.submit-form select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.438);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.submit-form input:focus,
+.submit-form select:focus {
+    border-color: #896027;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+/* Adding some spacing to ensure form elements are not too close */
+.submit-form .name,
+.submit-form .gender,
+.submit-form .rooms,
+.submit-form .mobile {
+    margin-bottom: 20px;
+}
+
+.submit-form button {
+    padding: 10px;
+    background-color : #896027;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-form button:hover {
+    background-color: #583d19;;
+}
+
+/* page8 ends here */
+
+/* footer starts here */
+/* Footer styles */
+.footer {
+    background-color: #F8F2EB;
+    color: #583d19;
+    padding: 40px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.footer-container div {
+    width: 30%;
+}
+
+.footer-about p,
+.footer-contact p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.footer h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.footer-contact a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-social a {
+    color: #896027;
+    margin-right: 10px;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #f1c40f;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+/* footer ends here */

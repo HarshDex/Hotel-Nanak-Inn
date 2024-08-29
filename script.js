@@ -2,6 +2,16 @@ gsap.registerPlugin(ScrollTrigger);
 
 var rellax = new Rellax('.rellax');
 
+var map = L.map('map').setView([29.8477, 80.5365], 13);  // Your hotel coordinates
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+attribution: ''
+}).addTo(map);
+
+L.marker([29.8477, 80.5365]).addTo(map)  // Marker at hotel location
+.bindPopup('Nanak Hotel')
+.openPopup();
+
 
 document.body.addEventListener("mousemove",(dets)=>{
     gsap.to('.cursor',{
@@ -57,86 +67,6 @@ const page1ScrollTrigger = {
     end : 'bottom center',
     scrub : 2,
 }
-// tl.to('.page1-part1',{
-//     y : "-100%",
-//     delay : 0.5,
-//     scrollTrigger : page1ScrollTrigger,
-// })
-// tl.to('.page1-part2',{
-//     delay : 0.5,
-//     y : "100%",
-//     scrollTrigger : page1ScrollTrigger,
-// })
-// tl.from('.page1-inside-container1 h1',{
-//     opacity : 0,
-//     scrollTrigger : page1ScrollTrigger
-// })
-
-// gsap.to('.page1',{
-//     scrollTrigger : {
-//         trigger : '.page1',
-//         scroller : 'body',
-//         start: "bottom bottom",
-//         end : "bottom -50%",
-//         pin : true,
-//     }
-// })
-
-// const tl2 = gsap.timeline();
-
-// tl2.to(['#D','#A2'], {
-//     y: '100%',
-//     scrollTrigger: {
-//         trigger: '.page1-part2',
-//         scroller: 'body',
-//         start: 'bottom 92%',
-//         end: 'bottom 40%',
-//         scrub: 1,
-//     }
-// })
-// .to(['#H1', '#L'], {
-//     y: '100%',
-//     scrollTrigger: {
-//         trigger: '.page1-part2',
-//         scroller: 'body',
-//         start: 'bottom 94%',
-//         end: 'bottom 40%',
-//         scrub: 1,
-//     }
-// })
-// .to(['#A1', '#U'], {
-//     y: '100%',
-//     scrollTrigger: {
-//         trigger: '.page1-part2',
-//         scroller: 'body',
-//         start: 'bottom 96%',
-//         end: 'bottom 40%',
-//         scrub: 1,
-//     }
-// })
-// .to(['#R', '#H2'], {
-//     y: '100%',
-//     scrollTrigger: {
-//         trigger: '.page1-part2',
-//         scroller: 'body',
-//         start: 'bottom 98%',
-//         end: 'bottom 40%',
-//         scrub: 1,
-//     }
-// })
-// .to('#C', {
-//     y: '100%',
-//     scrollTrigger: {
-//         trigger: '.page1-part2',
-//         scroller: 'body',
-//         start: 'bottom bottom',
-//         end: 'bottom 40%',
-//         scrub: 1,
-//     }
-// });
-
-
-
 
 // page1 inside animations ends here
 
@@ -161,6 +91,16 @@ addEventListener("click",()=>{
 })
 document.querySelector('.close-button').addEventListener('click',()=>{
     menuTl.reverse();
+})
+
+gsap.to('.menu-button',{
+    color : "black",
+    scrollTrigger : {
+        trigger : ".page2",
+        start : 'top 30%',
+        end : 'top 10%',
+        scrub : true,
+    }
 })
 // menu animation ends here 
 
