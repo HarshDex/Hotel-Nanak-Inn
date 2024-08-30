@@ -232,20 +232,20 @@
         <div class="page8">
             <h1 class="page8-heading">Contact Us</h1>
             <div class="page8-inner">
-                <form class="submit-form" onsubmit="event.preventDefault();">
+                <form class="submit-form"  onsubmit="return postToGoogle();"" id=”contact1”>
                     <div class="name">
                         <label for="first-name">First Name</label>
-                        <input type="text" name="first-name" id="first-name" placeholder="Enter your first name" required>
+                        <input type="text" data-name = 'first-name' name="entry.215597277" id="first-name" placeholder="Enter your first name" required>
                     </div>
             
                     <div class="name">
                         <label for="last-name">Last Name</label>
-                        <input type="text" name="last-name" id="last-name" placeholder="Enter your last name" required>
+                        <input type="text" data-name="last-name" name="entry.614228165" id="last-name" placeholder="Enter your last name" required>
                     </div>
             
                     <div class="gender">
                         <label for="gender">Gender</label>
-                        <select name="gender" id="gender" required>
+                        <select name="gender" data-name="gender" id="gender" name="entry.781595237" required>
                             <option value="">Select your gender</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
@@ -255,15 +255,15 @@
             
                     <div class="rooms">
                         <label for="rooms">Number of Rooms</label>
-                        <input type="number" name="rooms" id="rooms" placeholder="Enter number of rooms" min="1" required>
+                        <input type="number" data-name="rooms" name="entry.761487794" id="rooms" placeholder="Enter number of rooms" min="1" required>
                     </div>
             
                     <div class="mobile">
                         <label for="mobile">Mobile Number</label>
-                        <input type="tel" name="mobile" id="mobile" placeholder="Enter your mobile number" required>
+                        <input type="tel" data-name="mobile" name="entry.1886187913" id="mobile" placeholder="Enter your mobile number" required>
                     </div>
             
-                    <button class="submit">Submit</button>
+                    <button type="submit" id="contact-submit">Submit</button>
                 </form>
                 <div class="form-image">
                     <img src="https://drsonalkapoor.com/wp-content/uploads/2018/06/contact2-1.png" alt="">
@@ -280,8 +280,8 @@
                 </div>
                 <div class="footer-contact">
                     <h3>Contact Information</h3>
-                    <p>Email: info@hotelnanak.com</p>
-                    <p>Phone: +91 1234567890</p>
+                    <p>Email: contact.hotelnanak@gmail.com</p>
+                    <p>Phone: +91 73107 33713</p>
                     <p>Address: Dharchula, Uttarakhand, India</p>
                 </div>
                 <div class="footer-social">
@@ -302,10 +302,44 @@
 
     <!-- scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="script.js"></script>
+
+    <script>
+        function postToGoogle() {
+          var field1 = $("#first-name").val();
+          var field2 = $("#last-name").val();
+          var field3 = $("#gender").val();
+          var field4 = $("#rooms").val();
+          var field5 = $("#mobile").val();
+    
+          $.ajax({
+            url: "{https://docs.google.com/forms/u/0/d/e/1FAIpQLSeqrSJT3wScXpNc9sBivVGa1TDhwPEPcr5X1HQxo0tYE1jIxw/formResponse}",
+              
+            //add your google form generated numbers below which are also the 'names' of your inputs     
+            data: {
+              "entry.215597277": field1,
+              "entry.614228165": field2,
+              "entry.781595237": field3,
+              "entry.761487794": field4,
+              "entry.1886187913": field5
+              
+            },
+            type: "POST",
+            dataType: "xml",
+            success: function (d) {
+              $('#contact1').trigger('reset');
+            },
+            error: function (x, y, z) {
+              $('#contact1').trigger('reset');
+            }
+          });
+          return false;
+        }
+      </script>
 </body>
 </html>

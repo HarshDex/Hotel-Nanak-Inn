@@ -23,7 +23,31 @@
         position: relative;
         top : 10%;
     }
+    .book-now{
+        height : 5vh;
+        width : 4em;
+    }
 
+    .hotel-name{
+        height: 6em;
+        width: 15em
+    }
+    .book-now p{
+        font-size: .6em;
+    }
+    .page1-inside-bottom-sec{
+        height: 80vh;
+        width: 100%;
+    }
+    .page1-inside-bottom-sec h1{
+        font-size: 1em;
+        text-align: center;
+        -webkit-text-stroke: transparent;
+    }
+    .page2{
+        min-height: 100vh;
+        flex-direction: column;
+    }
 }
 
 /* Small devices (tablets, 600px to 768px) */
