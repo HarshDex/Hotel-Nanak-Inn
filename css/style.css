@@ -72,7 +72,7 @@ html,body{
     width: 100%;
     background-color: #F8F2EB;
     position: fixed;
-    top: -50%;
+    top: -50vh;
     z-index: 50;
     gap: 10vw;
 }
@@ -849,7 +849,7 @@ a{
     display: flex;
 }
 .form-image{
-    border-top: 1px solid black;
+    /* border-top: 1px solid black; */
     height: 40vh;
     width: 50%;
 }
@@ -964,8 +964,8 @@ a{
 
 .footer-contact a {
     display: block;
-    color: #fff;
     text-decoration: none;
+    color: #68491d;
 }
 
 .footer-social a {

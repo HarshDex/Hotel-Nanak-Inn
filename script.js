@@ -75,33 +75,49 @@ const page1ScrollTrigger = {
 // menu animations starts here
 const menuTl = gsap.timeline({paused: true});
 
-menuTl
-.to('.menu',{
-    y : '100%',
-    duration : 0.5,
-})
-.from('.item',{
-    y : "-35vw",
-    stagger : 0.2,
-})
+if (window.innerWidth <= 600) {
+  // For small devices (below 576px)
+  menuTl
+    .to('.menu', {
+      y: '100%',
+      // Optionally adjust or remove the duration
+      duration: 0.3 // Smaller duration on small devices if needed
+    })
+    .from('.item', {
+      stagger: 0.2, // Keep stagger effect only
+    });
+} else {
+  // For larger devices
+  menuTl
+    .to('.menu', {
+      y: '100%',
+      duration: 0.5,
+    })
+    .from('.item', {
+      y: '-35vw',
+      stagger: 0.2,
+    });
+}
 
-document.querySelector('.menu-button').
-addEventListener("click",()=>{
-    menuTl.play();
-})
-document.querySelector('.close-button').addEventListener('click',()=>{
-    menuTl.reverse();
-})
+document.querySelector('.menu-button').addEventListener("click", () => {
+  menuTl.play();
+});
 
-gsap.to('.menu-button',{
-    color : "black",
-    scrollTrigger : {
-        trigger : ".page2",
-        start : 'top 30%',
-        end : 'top 10%',
-        scrub : true,
-    }
-})
+document.querySelector('.close-button').addEventListener('click', () => {
+  menuTl.reverse();
+});
+
+// ScrollTrigger logic (remains the same)
+gsap.to('.menu-button', {
+  color: "black",
+  scrollTrigger: {
+    trigger: ".page2",
+    start: 'top 30%',
+    end: 'top 10%',
+    scrub: true,
+  }
+});
+
 // menu animation ends here 
 
 

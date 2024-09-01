@@ -3,6 +3,10 @@
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+    /* page 1 starts here */
+    .cursor{
+        display: none;
+    }
     .loader h1{
         position: absolute;
         right : 4%;
@@ -30,7 +34,8 @@
 
     .hotel-name{
         height: 6em;
-        width: 15em
+        width: 15em;
+        left: 23%;
     }
     .book-now p{
         font-size: .6em;
@@ -40,14 +45,143 @@
         width: 100%;
     }
     .page1-inside-bottom-sec h1{
-        font-size: 1em;
+        font-size: 2em;
+        line-height:40px;
         text-align: center;
         -webkit-text-stroke: transparent;
     }
+    
+    .close-button{
+        top: 1%;
+        right: 1%;
+    }
+    .item h1{
+        font-size: 1.1em;
+    }
+    /* page 1 ends here */
+
+    /* page 2 starts here */
     .page2{
-        min-height: 100vh;
+        height: 200vh;
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+    .page2-part2{
+        width: 100%;
+    }
+    .page2-part1{
+        padding: 0;
+        width: 100%;
+    }
+    .page2-part1-bigger{
+        left: 5%;
+        top: -20%;
+        justify-self: center;
+        width: 90%;
+    }
+    .page2-part1-smaller{
+        width: 90%;
+        top: 10%;
+        left: 5%;
+    }
+    /* page 2 ends here */
+
+    /* page 3 starts here */
+    .page3{
+        flex-direction: column;
+        height : 130vh;
+    }
+    .page3-part1{
+        width: 100%;
+    }
+    .page3-part2-smaller{
+        display: none;
+    }
+    .page3-part2-bigger{
+        width : 90vw;
+        left: 10%;
+    }
+    /* page 3 ends here */
+
+    /* page4 starts here */
+    .page4-text{
+        padding: 2em;
+        font-size: 1em;
+    }
+    .page4-button{
+        position: relative;
+    }
+    /* page4 ends here */
+
+    /* page5 starts here */
+    .page5{
+        flex-direction: column;
+        height: 130vh;
+    }
+    .page5-part1{
+        width: 100%;
+    }
+    .page5-smaller-image{
+        display: none;
+    }
+    .page5-large-image{
+        margin-top: 10%;
+        top: 7em;
+        width: 90vw;
+    }
+    /* page5 ends here */
+
+    /* page 6 starts here */
+    .page6{
+        padding: 0;
+        flex-direction: column-reverse;
+        height: 130vh;
+    }
+    .page6-part1{
+        padding: 1em;
+        width: 100%;
+    }
+    .page6-smaller-image{
+        display: none;
+    }
+    .page6-large-image{
+        width: 90vw;
+        align-self: center;
+        left: 5vw;
+    }
+    /* page 6 ends here */
+
+    /* page 7 starts here */
+    .page7{
+        padding: 1em;
+    }
+    .page7-inside{
         flex-direction: column;
     }
+    #map{
+        width: 100%;
+    }
+    .page7-about{
+        width: 100%;
+        margin-top: 10%;
+        padding: 0;
+    }
+    /* page 7 ends here */
+
+    /* page 8 starts here */
+    .form-image{
+        display : none;
+    }
+    /* page 8 ends here */
+
+    /* footer starts here */
+    .footer-container{
+        flex-direction: column;
+    }
+    .footer-container div {
+        width: 100%;
+    }
+    /* footer ends here */
 }
 
 /* Small devices (tablets, 600px to 768px) */
