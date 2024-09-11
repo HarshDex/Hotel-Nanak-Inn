@@ -18,6 +18,10 @@
   ::selection{
       background: rgba(82, 139, 151, 0.219);
   }   
+
+  a{
+    text-decoration: none;
+  }
       
   /* audio code starts here */
   .audio-control {
