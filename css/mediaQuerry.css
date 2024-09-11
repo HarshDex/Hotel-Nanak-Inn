@@ -172,6 +172,25 @@
     .form-image{
         display : none;
     }
+
+    .page8{
+        padding: 0;
+        flex-direction: column-reverse;
+        height: 125vh;
+    }
+    .page8-part1{
+        padding: 1em;
+        width: 100%;
+    }
+    .page8-smaller-image{
+        display: none;
+    }
+    .page8-large-image{
+        top: 15vh;
+        width: 90vw;
+        align-self: center;
+        left: 5vw;
+    }
     /* page 8 ends here */
 
     /* footer starts here */
