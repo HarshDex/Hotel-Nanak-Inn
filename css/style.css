@@ -853,6 +853,7 @@
   }
   
   .page8-large-image{
+    filter: brightness(80%);
       position: relative;
       top: 10em;
       left: -3em;
