@@ -352,38 +352,5 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="script.js"></script>
-
-    <script>
-        function postToGoogle() {
-          var field1 = $("#first-name").val();
-          var field2 = $("#last-name").val();
-          var field3 = $("#gender").val();
-          var field4 = $("#rooms").val();
-          var field5 = $("#mobile").val();
-    
-          $.ajax({
-            url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeqrSJT3wScXpNc9sBivVGa1TDhwPEPcr5X1HQxo0tYE1jIxw/formResponse",
-              
-            //add your google form generated numbers below which are also the 'names' of your inputs     
-            data: {
-              "entry.215597277": field1,
-              "entry.614228165": field2,
-              "entry.781595237": field3,
-              "entry.761487794": field4,
-              "entry.1886187913": field5
-              
-            },
-            type: "POST",
-            dataType: "xml",
-            success: function (d) {
-              $('#contact1').trigger('reset');
-            },
-            error: function (x, y, z) {
-              $('#contact1').trigger('reset');
-            }
-          });
-          return false;
-        }
-      </script>
 </body>
 </html>
