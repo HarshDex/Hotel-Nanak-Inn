@@ -717,6 +717,7 @@
       left: -10%;
       z-index: 8;
       bottom: -3em;
+      filter : brightness(80%);
   }  
   .page5-smaller-image img{
       height: 100%; 
