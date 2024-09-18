@@ -2,14 +2,125 @@
   padding : 0;
   margin : 0;
   box-sizing : border-box;
+  font-family: "Karla", sans-serif;
 }
 html,body{
   height : 100%;
   width : 100%;
 }
+::-webkit-scrollbar{
+    display: none
+}
+a{
+    text-decoration: none;
+    color : #896027;    
+}
+.bedroom-heading{
+    padding: 1em;
+    display: flex;
+    z-index: 5;
+    height: 10vh;
+    width: 100%;
+    gap: 1em;
+    position: fixed;
+    color : #896027;    
+    align-items: center;
+    background-color: #F8F2EB;
+
+}
 .page1{
+    z-index: 1;
+    padding: 1em;
+    min-height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: #F8F2EB;
+}
+.page1-larger-image{
+    height : 90vh;
+    width: 100%;
+}
+.page1-larger-image img{
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.bedroom-heading p{
+    font-size: 2em;
+    font-weight: 500;
+}
+.back-button{
+    font-size: 2em;
+    top: 1em;
+    left: 40px;
+}
+.page2{
     height: 100vh;
     width: 100%;
     display: flex;
     background-color: #F8F2EB;
 }
+
+
+
+.footer {
+    background-color: #F8F2EB;
+    color: #583d19;
+    padding: 40px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.footer-container div {
+    width: 30%;
+}
+
+.footer-about p,
+.footer-contact p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.footer h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.footer-contact a {
+    display: block;
+    text-decoration: none;
+    color: #68491d;
+}
+
+.footer-social a {
+    color: #896027;
+    margin-right: 10px;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #f1c40f;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+/* footer ends here */
+
