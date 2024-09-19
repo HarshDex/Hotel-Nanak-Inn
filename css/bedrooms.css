@@ -69,6 +69,17 @@ a{
     display: flex;
     background: linear-gradient(to bottom,#F8F2EB, #E3E2DC, #D5D8D3);
 }
+.page2-larger-image{
+
+    height : 90vh;
+    width: 100%;
+}
+.page2-larger-image img{
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
 /* page 2 ends here */
 
 
@@ -95,6 +106,16 @@ a{
     align-items: center;
     background: linear-gradient(to bottom, #D5D8D3,#C8CDCB,#C6CBC9);
 }
+.page3-larger-image{
+    height : 90vh;
+    width: 100%;
+}
+.page3-larger-image img{
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
 /* page 3 ends here */
 
 /* page 4 starts here */
@@ -106,6 +127,17 @@ a{
     justify-content: center;
     align-items: center;
 }
+.page4-larger-image{
+    height : 90vh;
+    width: 100%;
+}
+.page4-larger-image img{
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
 /* page 4 ends here */
 
 /* page 6 starts here */
@@ -202,14 +234,13 @@ a{
 
 @media only screen and (max-width: 600px){
     .page1{
-        height: 60vh;
+        height: 100vh;
         flex-direction: column;
     }
-    /* .page1-larger-image{
-        position: absolute;
-        top: 10vh;
-    } */
      .page1-larger-image{
+        position: relative;
+        margin-bottom: -10em;
+        margin-top: -10em;
         width: 90vw;
      }
     .about{
@@ -217,17 +248,35 @@ a{
         width: 100%;
     }
     .page2{
-        height: 70vh;
+        height: 100vh;
         flex-direction: column-reverse;
     }
+    .page2-larger-image{
+        position: relative;
+        margin-bottom: -10em;
+        margin-top: -25em;
+        width: 90vw;
+     }
     .page3{
-        height: 70vh;
+        height: 50vh;
         flex-direction: column;
     }
+    .page3-larger-image{
+        position: relative;
+        margin-bottom: -10em;
+        margin-top: -10em;
+        width: 90vw;
+     }
     .page4{
-        height: 60vh;
+        height: 100vh;
         flex-direction: column-reverse;
     }
+    .page4-larger-image{
+        position: relative;
+        margin-bottom: -10em;
+        margin-top: -10em;
+        width: 90vw;
+     }
     .page5{
         padding: 1em;
         height: 180vh;
