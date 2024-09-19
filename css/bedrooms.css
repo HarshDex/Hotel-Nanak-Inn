@@ -28,6 +28,7 @@ a{
     background-color: #F8F2EB;
 
 }
+/* page 1 starts here */
 .page1{
     z-index: 1;
     padding: 1em;
@@ -46,7 +47,7 @@ a{
     border-radius: 10px;
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 .bedroom-heading p{
     font-size: 2em;
@@ -57,15 +58,89 @@ a{
     top: 1em;
     left: 40px;
 }
+/* page1 ends here */
+
+/* page 2 starts here */
 .page2{
     height: 100vh;
     width: 100%;
+    justify-content: center;
+    align-items: center;
     display: flex;
-    background-color: #F8F2EB;
+    background: linear-gradient(to bottom,#F8F2EB, #E3E2DC, #D5D8D3);
 }
+/* page 2 ends here */
 
 
+/* about starts here */
+.about{
+    padding: 1em;
+    margin: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 30em;
+    font-weight: 500;
+    text-align: center;
+}
+/* about ends here */
 
+/* page 3 starts here */
+.page3{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #D5D8D3,#C8CDCB,#C6CBC9);
+}
+/* page 3 ends here */
+
+/* page 4 starts here */
+.page4{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    background: linear-gradient(to bottom,#C6CBC9,#C8CDCB,#D5D8D3);
+    justify-content: center;
+    align-items: center;
+}
+/* page 4 ends here */
+
+/* page 6 starts here */
+.page5{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5em;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(to bottom, #D5D8D3,#F8F2EB, #F8F2EB);
+}
+.page5-image1{
+    height: 80vh;
+    width: 30em;
+}
+.page5-image1 img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.page5-image2{
+    height: 80vh;
+    width: 30em;
+}
+.page5-image2 img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+/* page 6 ends here */
+
+/* footer starts here */
 .footer {
     background-color: #F8F2EB;
     color: #583d19;
@@ -124,3 +199,41 @@ a{
 }
 /* footer ends here */
 
+
+@media only screen and (max-width: 600px){
+    .page1{
+        height: 60vh;
+        flex-direction: column;
+    }
+    /* .page1-larger-image{
+        position: absolute;
+        top: 10vh;
+    } */
+     .page1-larger-image{
+        width: 90vw;
+     }
+    .about{
+        height: fit-content;
+        width: 100%;
+    }
+    .page2{
+        height: 70vh;
+        flex-direction: column-reverse;
+    }
+    .page3{
+        height: 70vh;
+        flex-direction: column;
+    }
+    .page4{
+        height: 60vh;
+        flex-direction: column-reverse;
+    }
+    .page5{
+        padding: 1em;
+        height: 180vh;
+        flex-direction: column;
+    }
+    .page5-image1,.page5-image2{
+        width: 90vw;
+    }
+}

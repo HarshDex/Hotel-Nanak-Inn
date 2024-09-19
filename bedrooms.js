@@ -12,6 +12,5 @@ gsap.to(header,{
         start : "60% 40%",
         end : "70% 30% ",
         scrub : true,
-        markers : true,
     }
 })
